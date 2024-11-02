@@ -25,3 +25,25 @@ function findSubjectWithWeightOne(user) {
 
 calculateWeightedAverage(user);
 findSubjectWithWeightOne(user);
+
+const collections = [
+    {},
+    15,
+    "hello@test.pl",
+    null,
+    ['aaa', 'bbb', 5],
+    'admin@gmail.com',
+    undefined,
+    'a34@yahoo.com',
+    '321@a',
+    '321.pl'
+  ];
+  
+  function getMails(collections) {
+    const emailPattern = /^[\w.-]+@[a-zA-Z\d.-]+\.[a-zA-Z]{2,}$/;
+    const emails = _.filter(collections, (item) => typeof item === 'string' && emailPattern.test(item));
+    console.log("Posortowane maile:", emails.sort());
+  }
+  
+  getMails(collections);
+  
